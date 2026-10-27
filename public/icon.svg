@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#060913" />
+      <stop offset="100%" stopColor="#0b1329" />
+    </linearGradient>
+    <linearGradient id="radarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#38bdf8" />
+      <stop offset="50%" stopColor="#818cf8" />
+      <stop offset="100%" stopColor="#c084fc" />
+    </linearGradient>
+    <linearGradient id="needleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#38bdf8" />
+      <stop offset="100%" stopColor="#0284c7" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)" />
+
+  <!-- Outer Tech Hexagon / Ring -->
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#1e293b" stroke-width="6" />
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="10 8" stroke-opacity="0.6" />
+  <circle cx="256" cy="256" r="105" fill="none" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.4" />
+  <circle cx="256" cy="256" r="60" fill="none" stroke="#818cf8" stroke-width="1.5" stroke-opacity="0.5" />
+
+  <!-- Tactical Crosshairs -->
+  <line x1="256" y1="40" x2="256" y2="472" stroke="#38bdf8" stroke-width="3" stroke-opacity="0.4" />
+  <line x1="40" y1="256" x2="472" y2="256" stroke="#38bdf8" stroke-width="3" stroke-opacity="0.4" />
+
+  <!-- Compass Cardinal Ticks -->
+  <polygon points="256,70 248,100 264,100" fill="#38bdf8" />
+  <polygon points="256,442 248,412 264,412" fill="#64748b" />
+  <polygon points="70,256 100,248 100,264" fill="#64748b" />
+  <polygon points="442,256 412,248 412,264" fill="#64748b" />
+
+  <!-- Hero Stylized Geo-Diamond Prism Needle -->
+  <g filter="url(#glow)">
+    <polygon points="256,110 320,256 256,220" fill="url(#radarGrad)" />
+    <polygon points="256,110 192,256 256,220" fill="#38bdf8" />
+    <polygon points="256,402 320,256 256,292" fill="#475569" />
+    <polygon points="256,402 192,256 256,292" fill="#334155" />
+  </g>
+
+  <!-- Glowing Sensor Core Eye -->
+  <circle cx="256" cy="256" r="22" fill="#060913" stroke="#38bdf8" stroke-width="4" />
+  <circle cx="256" cy="256" r="11" fill="#38bdf8" filter="url(#glow)" />
+</svg>
